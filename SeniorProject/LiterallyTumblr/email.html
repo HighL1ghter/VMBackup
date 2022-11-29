@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="header">
+        <h1>Inbox</h1>
+    </div>
+
+    <div class="flex-container">
+
+        <div class="flex-child left">
+
+            <div class="email">
+               <button type="button" onclick=myFunction(this) id="1">
+                    <h3>
+                        Humbert Albert | How have you been?
+                    </h3>
+
+                </button>
+            </div>
+
+            <div class="email">
+                <button type="button" onclick=myFunction(this) id="2">
+                    <h3>
+                        Kermit Sebastian Wheelock  |  Bank Robbery
+                    </h3>
+                </button>
+            </div>
+
+            <div class="email">
+                <button type="button" onclick=myFunction(this) id="3">
+                    <h3>
+                        Alex Pickle | Test Answers
+                    </h3>
+                 </button>   
+            </div>
+
+            <div class="email">
+                <button type="button" onclick=myFunction(this) id="4">
+                    <h3>
+                        Vera Crisp | DNA Test Results
+                    </h3>
+                 </button>   
+            </div>
+
+            <div class="email" id="worm">
+                <button type="wormButton" onclick = "virus()">
+                     <h3>
+                         FREE IPAD | YOU ARE A WINNER!!! 🤑🤑🤑
+                     </h3>
+                     
+ 
+                 </button>
+             </div>
+
+             <div class="email">
+                <button type="button" onclick=myFunction(this) id="5">
+                    <h3>
+                        Jacklyn Georgeanna Shakespeare  | Google
+                    </h3>
+                 </button>   
+            </div>
+
+            <div class="email">
+                <button type="button" onclick=myFunction(this) id="6">
+                    <h3>
+                        Friday Montague Midgley   | Alphabet
+                    </h3>
+                 </button>   
+            </div>
+
+        </div>
+
+        
+        <div class="flex-child right">
+          <div id="messageText"></div>
+        </div>
+        
+    </div>
+
+    <!-- <div id="prompt"></div> -->
+
+
+<script>
+
+    function myFunction(button) {
+        var x = document.getElementById("messageText");
+        if (button.id ==="1"){
+            var message ="What's up loser"
+        }
+        else if (button.id ==="2"){
+            var message ="Are we still on for tonight?"
+        }
+        else if (button.id ==="3"){
+            var message ="You failed"
+        }
+        else if (button.id ==="4"){
+            var message ="You're 100% stupid 🤮"
+        }
+        else if (button.id ==="5"){
+            var message ="https://www.google.com/"
+        }
+        else if (button.id ==="6"){
+            var message ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        }
+        
+        if (x.innerHTML != message) {
+          x.innerHTML = message;
+        }
+      } 
+
+      function virus(){
+        /*
+            !!!!!!PLACEHOLDER!!!!!!
+        */
+
+        // document.getElementById("header").style.backgroundColor = "red";
+        // document.body.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/951e964b-b798-4008-ae16-6653ae148824/d9aedlv-e7a51d22-29f5-46a0-b802-032433c63ea6.png')";
+        // document.body.style.backgroundSize = "120px 120px"; 
+
+        var div = document.createElement("div");
+        // div.style.width = "500px";
+        // div.style.height = "300px";
+        // div.style.background = "red";
+        // div.style.color = "white";
+        div.innerHTML = "Hello";
+
+        document.getElementById("prompt").appendChild(div);
+
+
+      }
+
+     
+</script>
+
+</body>
