@@ -7,7 +7,8 @@
 <body>
 
     <div id="header">
-        <h1>Inbox</h1>
+        <a onClick="window.location.reload()"> <h1>Inbox</h1></a>
+       
     </div>
 
     <div class="flex-container">
@@ -26,7 +27,7 @@
             <div class="email">
                 <button type="button" onclick=myFunction(this) id="2">
                     <h3>
-                        Kermit Sebastian Wheelock  |  Bank Robbery
+                        Kermit Sebastian Wheelock  |  Hello
                     </h3>
                 </button>
             </div>
@@ -34,7 +35,7 @@
             <div class="email">
                 <button type="button" onclick=myFunction(this) id="3">
                     <h3>
-                        Alex Pickle | Test Answers
+                        Alex Pickle | Greetings
                     </h3>
                  </button>   
             </div>
@@ -42,7 +43,7 @@
             <div class="email">
                 <button type="button" onclick=myFunction(this) id="4">
                     <h3>
-                        Vera Crisp | DNA Test Results
+                        Vera Crisp | Email
                     </h3>
                  </button>   
             </div>
@@ -60,7 +61,7 @@
              <div class="email">
                 <button type="button" onclick=myFunction(this) id="5">
                     <h3>
-                        Jacklyn Georgeanna Shakespeare  | Google
+                        Jacklyn Georgeanna Shakespeare  | Hey
                     </h3>
                  </button>   
             </div>
@@ -68,7 +69,7 @@
             <div class="email">
                 <button type="button" onclick=myFunction(this) id="6">
                     <h3>
-                        Friday Montague Midgley   | Alphabet
+                        Friday Montague Midgley   | Hi
                     </h3>
                  </button>   
             </div>
@@ -76,40 +77,59 @@
         </div>
 
         
-        <div class="flex-child right">
-          <div id="messageText"></div>
+        <div class="flex-child right" >
+            <div id="addressContainer"> 
+                <div id="senderEmail"></div>
+            </div>
+            <div id="messageContainer" style="overflow-y:scroll;">
+                <div id="messageText"></div>
+            </div>
+
+
         </div>
         
     </div>
 
-    <!-- <div id="prompt"></div> -->
+    <!-- <div id="here></div> -->
 
 
 <script>
 
     function myFunction(button) {
-        var x = document.getElementById("messageText");
-        if (button.id ==="1"){
-            var message ="What's up loser"
+
+        var currentText = document.getElementById("messageText");
+        var currentAddress = document.getElementById("senderEmail");
+        switch (button.id){
+            case "1":
+                message ="Message 1"
+                address = "From: humbertalbert@email.com"
+                break;
+            case "2":
+                message ="Long Branch is a beachside city in Monmouth County, in the U.S. state of New Jersey. As of the 2010 U.S. census, the city's population was 30,719, reflecting a decline of 621 (-2.0%) from the 31,340 counted in the 2000 census, which had in turn increased by 2,682 (+9.4%) from the 28,658 counted in the 1990 census. As of the 2010 census, it was the 6th-most-populous municipality in Monmouth County and had the 71st-highest population of any municipality in New Jersey.<br>Long Branch was formed on April 11, 1867, as the Long Branch Commission, from portions of Ocean Township. Long Branch was incorporated as a city by an act of the New Jersey Legislature on April 8, 1903, based on the results of a referendum, replacing the Long Branch Commission."
+                address = "From: kermitsw@email.com"
+                break;  
+            case "3":
+                message ="Monmouth University is a private university in West Long Branch, New Jersey. Founded in 1933 as Monmouth Junior College, it became Monmouth College in 1956 and Monmouth University in 1995 after receiving its charter.<br>There are about 4,400 full-time and 260 part-time undergraduate and 1,750 graduate students, as well as 302 full-time faculty members. About 80% of faculty members hold Ph.D.s or other terminal degrees in their field of study  The university's student-to-faculty ratio is about 14:1. Forty-four percent of students live on-campus. Most of Monmouth's student body is drawn from the northeastern United States, although student body is composed of students from 29 states and 28 countries.Monmouth University is a private university in West Long Branch, New Jersey. Founded in 1933 as Monmouth Junior College, it became Monmouth College in 1956 and Monmouth University in 1995 after receiving its charter.<br>The school that would become Monmouth University was founded in 1933 as Monmouth Junior College, a two-year junior college under Dean Edward G. Schlaefer. Created in New Jersey during the Great Depression, Monmouth Junior College was intended by Schlaefer to provide an opportunity for higher education to high school graduates in Monmouth County who could not afford to go away to college. The junior college did not have its own campus at the time of its founding and was housed at Long Branch High School in Long Branch. Due to sharing a building with a high school, classes were taught during evening hours after the high school students had departed.<br>Monmouth Junior College opened to students on November 21, 1933. The junior college's first student enrollment was reported at 325, all graduates from Monmouth County high schools, with a faculty of 12 instructors. Federal reemployment funds financed the junior college, with approximately $18,000 approved by New Jersey Director of Emergency Relief John Colt.<br>In 1947, the school received full college accreditation from the New Jersey Board of Education to award associate degrees to students. 100 students became the first recipients of associate degrees from Monmouth Junior College the following year. Support from students and the community is credited with helping the school continue to teach classes and become a privately funded institution.<br>Monmouth Junior College acquired its own campus in 1955 when it relocated from Long Branch to the estate of Shadow Lawn in West Long Branch. The estate was purchased from Eugene H. Lehman for $350,000.[8] In addition to the monetary cost, Lehman signed over the estate under the provision that he serve as the school's president for one year.<br>A year later, the school was renamed Monmouth College when it was accredited by the state to offer four-year programs that would award bachelor degrees to students. Through the agreement that granted Shadow Lawn to the school, Lehman became the first president of Monmouth College from 1956 to 1957. Schlaefer resumed leadership after Lehman's tenure, serving as president from 1957 to 1962. Monmouth's first commencement was held at Shadow Lawn the same year that Schlaefer assumed the presidency and the first bachelor's degrees were awarded the year after, in 1958."
+                address = "From: apickle@email.com"
+                break;
+            case "4":
+                message ="The Jersey Shore (known by locals simply as the Shore) is the coastal region of the U.S. state of New Jersey. Geographically, the term encompasses about 141 miles (227 km) of oceanfront bordering the Atlantic Ocean, from Perth Amboy in the north to Cape May Point in the south. The region includes Middlesex, Monmouth, Ocean, Atlantic, and Cape May counties, which are in the central and southern parts of the state. Located in the center of the Northeast Megalopolis, the northern half of the shore region is part of the New York metropolitan area, while the southern half of the shore region is part of the Delaware Valley, a.k.a. the Philadelphia metropolitan area. The Jersey Shore hosts the highest concentration of oceanside boardwalks in the United States. <br>Famous for its many boardwalks with arcades, amusement parks, and water parks boasting hundreds of rides and attractions, the Jersey Shore is a popular vacation spot with residents of North Jersey, New York, Maryland, Delaware, Connecticut, and Pennsylvania. Certain shore communities are also popular with visitors of the Canadian province of Quebec. Due to New Jersey's peninsular geography, both sunrise and sunset are visible over water from different points on the Jersey Shore. "
+                address = "From: veracrisp@email.com"
+                break;  
+            case "5":
+                message ="What's uuuuuup"
+                address = "From: jgshakespeare@email.com"
+                break;
+            case "6":
+                message ="Message 6"
+                address = "From: fridaymm@email.com"
+                break;                
         }
-        else if (button.id ==="2"){
-            var message ="Are we still on for tonight?"
+        if (currentText.innerHTML != message) {
+          currentText.innerHTML = message;
         }
-        else if (button.id ==="3"){
-            var message ="You failed"
-        }
-        else if (button.id ==="4"){
-            var message ="You're 100% stupid 🤮"
-        }
-        else if (button.id ==="5"){
-            var message ="https://www.google.com/"
-        }
-        else if (button.id ==="6"){
-            var message ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        }
-        
-        if (x.innerHTML != message) {
-          x.innerHTML = message;
+        if (currentAddress.innerHTML != address) {
+          currentAddress.innerHTML = address;
         }
       } 
 
@@ -118,18 +138,20 @@
             !!!!!!PLACEHOLDER!!!!!!
         */
 
-        // document.getElementById("header").style.backgroundColor = "red";
-        // document.body.style.backgroundImage = "url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/951e964b-b798-4008-ae16-6653ae148824/d9aedlv-e7a51d22-29f5-46a0-b802-032433c63ea6.png')";
-        // document.body.style.backgroundSize = "120px 120px"; 
+        document.getElementById("messageContainer").style.backgroundColor = "red";
+        document.body.style.backgroundImage = "url('https://variety.com/wp-content/uploads/2022/08/MCDMORB_SP040.jpg?w=681&h=383&crop=1')";
+        document.body.style.backgroundSize = "120px 120px"; 
 
-        var div = document.createElement("div");
+        // var prompt= document.createElement("div");
+        //   popup = setAttribute("id", "prompt");
+
         // div.style.width = "500px";
         // div.style.height = "300px";
         // div.style.background = "red";
         // div.style.color = "white";
-        div.innerHTML = "Hello";
+        // div.innerHTML = "Hello";
 
-        document.getElementById("prompt").appendChild(div);
+        prompt.getElementById("here").appendChild(prompt);
 
 
       }

@@ -1,31 +1,80 @@
+html, body {
+    margin:0;
+    padding:0;  
+    background-color: whitesmoke;  
+}
+    
 #header {   
-    border: 3px solid black;
-    border-radius: 10px;
+    /* border: 3px solid black; */
+    /* border-radius: 10px; */
+    
+    
+    /* border-bottom: 3px solid black; */
+    padding-top: 1px;
     margin-bottom: 75px;
+    /* background-color: white; */
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(252,252,252,1) 71%, rgba(241,241,241,1) 100%); 
+
+    box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.35);
+-webkit-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.35);
+-moz-box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.35);
 }
 
 #header h1{
         color:deepskyblue;
-        padding-left: 10px;
+        margin-left: 15px;
         font-family: Helvetica, sans-serif;
+        padding-bottom: 25px;
+}
+
+#header h1:hover{
+    cursor:pointer;
 }
 
 .flex-container {
     display: flex;
+    margin: 10px;
 }
 
 .flex-child{
     flex: 1;
-    /* border: 2px solid lightgrey; */
+    /* border: 2px solid lightgray; */
 }  
 
 [class='flex-child right']{
     border: 2px solid black;
+    background-color: white;
     box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.2);
 -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.2);
 -moz-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.2);  
 height:500px
 }
+
+#messageText{
+    font-family: Helvetica, sans-serif;
+    padding-left: 10px;
+    padding-top: 5px;
+    line-height: 1.75;
+}
+#senderEmail{
+    font-family: Helvetica, sans-serif;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+    font-size: large;
+}
+#addressContainer{
+    height:30px;
+    padding-top: 10px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid gray;
+}
+#messageContainer{
+    /* padding-top: 5px; */
+    height: 440px;
+}
+
 
 .flex-child:first-child {
     margin-right: 20px;
@@ -33,7 +82,7 @@ height:500px
 
 
 .email{
-    /* border: 3px solid lightgrey; */
+    /* border: 3px solid lightgray; */
     border-radius: 5px;
     margin-bottom: -5px;
 }
@@ -41,17 +90,16 @@ height:500px
 .email h3{
     font-family: Helvetica, sans-serif;
     padding-left: 10px;
+
 }
+
+
 
 #worm h3{
     color: red
 }
 
-#messageText{
-    font-family: Helvetica, sans-serif;
-    padding-left: 10px;
-    padding-top: 5px;
-}
+
 
 #prompt{
     background-color: white;
@@ -64,7 +112,7 @@ height:500px
 }
 
 button{
-    border: 2px solid grey;
+    border: 2px solid gray;
     border-radius: 2px;
     background-color: white;
     display: block;
@@ -75,3 +123,7 @@ button:focus{
     display: block;
     width: 100%;
 }
+button:hover{
+    cursor:pointer;
+}
+
